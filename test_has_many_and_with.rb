@@ -42,12 +42,13 @@ class BugTest < Minitest::Test
   def test_has_many_and_with
     post = Post.create!
     post.comments << Comment.create!
+
     assert_equal Comment.foo.first.foo, 1
     assert_equal post.comments.foo.first.foo, 1
     assert_equal post.comments_foo.first.foo, 1
 
     assert_equal Comment.with_foo.first.foo, 1
     assert_equal post.comments.with_foo.first.foo, 1
-    assert_equal post.comments_with_foo.first.foo, 1 # <- no foo attribute
+    assert_equal post.comments_with_foo.first.foo, 1 # with_foo scope is ignored
   end
 end
