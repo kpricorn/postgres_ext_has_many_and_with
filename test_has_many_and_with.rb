@@ -1,7 +1,6 @@
 require 'bundler'
 Bundler.setup(:default)
 
-require 'pry'
 require 'active_record'
 require 'postgres_ext'
 require 'minitest/autorun'
